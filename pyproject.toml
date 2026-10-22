@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markdown-plus"
+version = "0.1.0"
+description = "Interactive Markdown viewer for the terminal with inline modals."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["markdown", "tui", "terminal", "modal", "dialog", "rich", "textual"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Text Processing :: Markup",
+    "Environment :: Console :: Curses",
+]
+dependencies = [
+    "rich>=13",
+    "textual>=0.60",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+markdown-plus = "markdown_plus.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["markdown_plus*"]
+
+[tool.setuptools.package-data]
+markdown_plus = ["*.css"]
